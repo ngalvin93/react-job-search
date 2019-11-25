@@ -1,6 +1,7 @@
 import React from 'react'
 import '/Users/alvinng/DigitalCrafts/class-exercise/112319_react_job_api/react-jobs/src/styles/Jobs.css'
 import JobsListItem from './JobsListItem'
+import axios from 'axios'
 
 const Jobs = () => {
     return (
