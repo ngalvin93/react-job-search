@@ -17,4 +17,5 @@ export default App;
 // is a constructor() only used in classes or can it work in functional components?
 // not sure what constructor() or super() is doing in classes
 // i had to add cors to the api, why?
+// react-route vs react-router-dom
 
