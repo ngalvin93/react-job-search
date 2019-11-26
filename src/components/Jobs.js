@@ -2,6 +2,8 @@ import React from 'react'
 import '/Users/alvinng/DigitalCrafts/class-exercise/112319_react_job_api/react-jobs/src/styles/Jobs.css'
 import JobsListItem from './JobsListItem'
 import axios from 'axios'
+import Job from './Job'
+import { Switch, Route } from 'react-router-dom'
 
 class Jobs extends React.Component {
     constructor (props) {
@@ -30,7 +32,12 @@ class Jobs extends React.Component {
                     <p className="App-subtitle">Click to explore jobs</p>
                 </header>
             </div>
-            <div className="Jobs">{ jobsJSX }</div>
+            <div className="Jobs">
+                <Switch>
+                    <Route exact path='/jobs' render={ () => jobsJSX } />
+                    <Route path='/jobs/:id' component={ Job } />
+                </Switch>
+            </div>
         </div>
     )}
 }
