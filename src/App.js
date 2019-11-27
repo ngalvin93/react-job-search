@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import Jobs from './components/Jobs'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   return (
-    <Jobs/>
+    <Router>
+      <Jobs/>
+    </Router>
   );
 }
 

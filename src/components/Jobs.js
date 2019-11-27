@@ -1,5 +1,5 @@
 import React from 'react'
-import '/Users/alvinng/DigitalCrafts/class-exercise/112319_react_job_api/react-jobs/src/styles/Jobs.css'
+import '../styles/Job.css'
 import JobsListItem from './JobsListItem'
 import axios from 'axios'
 import Job from './Job'
@@ -13,6 +13,10 @@ class Jobs extends React.Component {
         }
     }
 
+    // state = {
+    //     jobs: []
+    // }
+
     componentDidMount () {
         axios.get('http://localhost:3001/api/jobs')
             .then(({data})=>{this.setState({ jobs: data })})
@@ -20,7 +24,7 @@ class Jobs extends React.Component {
     }
 
     render () {
-    let jobsJSX = this.state.jobs.map((job, index)=>{
+    const jobsJSX = this.state.jobs.map((job, index)=>{
         return <JobsListItem key={index} {...job}/>
     })
 
@@ -34,8 +38,8 @@ class Jobs extends React.Component {
             </div>
             <div className="Jobs">
                 <Switch>
-                    <Route exact path='/jobs' render={ () => jobsJSX } />
-                    <Route path='/jobs/:id' component={ Job } />
+                    <Route exact path='/jobs' render={ () => jobsJSX }></Route>
+                    <Route path='/jobs/:id' component={ Job }></Route>
                 </Switch>
             </div>
         </div>

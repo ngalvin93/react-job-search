@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import '/Users/alvinng/DigitalCrafts/class-exercise/112319_react_job_api/react-jobs/src/styles/JobsListItem.css'
 
 class JobsListItem extends React.Component {
-    clickHandler () {
+    clickHandler = () => {
         this.props.history.push('/jobs/' + this.props.id)
     }
     render() {
@@ -23,4 +23,4 @@ class JobsListItem extends React.Component {
 }
 
 export default withRouter(JobsListItem);
-// export default JobsListItem
+//export default JobsListItem
